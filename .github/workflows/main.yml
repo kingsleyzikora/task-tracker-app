@@ -23,12 +23,8 @@ jobs:
       run: |
         docker build -t kingsleyzikora/backend-app ./backend/
         docker build -t kingsleyzikora/frontend-app ./frontend/
-        
-    - name: push image to docker hub
-      run: |
-          docker login -u kingsleyzikora -p ${{ secrets.DOCKER_HUB_TOKEN }}
-          docker push kingsleyzikora/backend-app
-          docker push kingsleyzikora/frontend-app
+        docker push kingsleyzikora/backend-app
+        docker push kingsleyzikora/frontend-app
 
     - name: Install SSH Key
       uses: webfactory/ssh-agent@v0.5.3

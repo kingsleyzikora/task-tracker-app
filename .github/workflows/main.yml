@@ -21,8 +21,8 @@ jobs:
 
     - name: Build and push Docker image 1
       run: |
-        docker build ./backend/ -t kingsleyzikora/backend-app .
-        docker build ./frontend/ -t kingsleyzikora/frontend-app .
+        docker build -t kingsleyzikora/backend-app ./backend/
+        docker build -t kingsleyzikora/frontend-app ./frontend/
         
     - name: push image to docker hub
       run: |
